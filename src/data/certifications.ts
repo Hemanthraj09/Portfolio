@@ -1,0 +1,143 @@
+// Certifications data - update with your actual details
+export interface Certification {
+  id: number;
+  title: string;
+  issuer: string;
+  date: string;
+  image: string;
+  type: "image" | "pdf";
+  category: "course" | "hackathon" | "leadership";
+}
+
+export const certifications: Certification[] = [
+  // Featured (first 3 appear on homepage): Amagi, CeNS, BloodDonation
+  {
+    id: 1,
+    title: "Amagi Internship",
+    issuer: "Amagi",
+    date: "2025",
+    image: "/certificates/Amagi.jpg",
+    type: "image",
+    category: "course",
+  },
+  {
+    id: 2,
+    title: "CeNS Research",
+    issuer: "Centre for Nano & Soft Matter Sciences",
+    date: "2022",
+    image: "/certificates/CeNS.jpg",
+    type: "image",
+    category: "course",
+  },
+  {
+    id: 3,
+    title: "Blood Donation Camp",
+    issuer: "Blood Bank",
+    date: "2024",
+    image: "/certificates/BloodDonation.jpg",
+    type: "image",
+    category: "leadership",
+  },
+  // Courses
+  {
+    id: 4,
+    title: "Machine Learning",
+    issuer: "Certification Provider",
+    date: "2025",
+    image: "/certificates/ML.pdf",
+    type: "pdf",
+    category: "course",
+  },
+  // Hackathon
+  {
+    id: 5,
+    title: "L'Oréal Brandstorm",
+    issuer: "L'Oréal",
+    date: "2025",
+    image: "/certificates/LOreal.pdf",
+    type: "pdf",
+    category: "hackathon",
+  },
+  // Leadership and Participation
+  {
+    id: 6,
+    title: "Decode AI",
+    issuer: "Decode AI",
+    date: "2025",
+    image: "/certificates/DecodeAI.jpg",
+    type: "image",
+    category: "leadership",
+  },
+  {
+    id: 7,
+    title: "Encode-Mania",
+    issuer: "Event Organizer",
+    date: "2024",
+    image: "/certificates/Encode-Mania.pdf",
+    type: "pdf",
+    category: "leadership",
+  },
+  {
+    id: 8,
+    title: "BioGenesis Participation",
+    issuer: "BioGenesis",
+    date: "2024",
+    image: "/certificates/BioGenesis.pdf",
+    type: "pdf",
+    category: "leadership",
+  },
+  {
+    id: 9,
+    title: "Department Coordinator",
+    issuer: "College",
+    date: "2024",
+    image: "/certificates/HemanthRaj_Department_Coordinator.pdf",
+    type: "pdf",
+    category: "leadership",
+  },
+  {
+    id: 10,
+    title: "Sponsorship POC",
+    issuer: "Event Organizer",
+    date: "2025",
+    image: "/certificates/SponsorshipPOC.pdf",
+    type: "pdf",
+    category: "leadership",
+  },
+  {
+    id: 11,
+    title: "Sponsorship POC (PS)",
+    issuer: "Event Organizer",
+    date: "2024",
+    image: "/certificates/HemanthRaj_Sponsorship_POC_(PS).pdf",
+    type: "pdf",
+    category: "leadership",
+  },
+  {
+    id: 12,
+    title: "Open Course Certificate 1",
+    issuer: "Platform",
+    date: "2024",
+    image: "/certificates/OCC1.png",
+    type: "image",
+    category: "leadership",
+  },
+  {
+    id: 13,
+    title: "Open Course Certificate 2",
+    issuer: "Platform",
+    date: "2024",
+    image: "/certificates/OCC2.png",
+    type: "image",
+    category: "leadership",
+  },
+  {
+    id: 14,
+    title: "Volunteering Certificate",
+    issuer: "Organization",
+    date: "2024",
+    image: "/certificates/Volunteering.png",
+    type: "image",
+    category: "leadership",
+  },
+];

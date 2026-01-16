@@ -52,8 +52,6 @@ export const skillCategories: SkillCategory[] = [
     title: "Tools & Environment",
     skills: [
       { name: "Git", icon: "git" },
-      { name: "GitHub", icon: "github" },
-      { name: "Jupyter Notebook", icon: "jupyter" },
       { name: "MongoDB", icon: "mongodb" },
     ],
   },

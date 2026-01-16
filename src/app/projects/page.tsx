@@ -29,7 +29,7 @@ export default function ProjectsPage() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
+          transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] as const }}
           className="mb-16"
         >
           <p className="mb-3 text-sm font-medium uppercase tracking-widest text-accent">

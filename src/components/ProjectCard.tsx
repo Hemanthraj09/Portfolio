@@ -18,7 +18,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       transition={{
         duration: 0.6,
         delay: index * 0.1,
-        ease: [0.25, 0.4, 0.25, 1],
+        ease: [0.25, 0.4, 0.25, 1] as const,
       }}
       whileHover={{ y: -8 }}
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-card-border bg-card-bg/50 backdrop-blur-sm transition-all duration-500 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/5"

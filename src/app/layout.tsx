@@ -9,8 +9,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name | Portfolio",
-  description: "Full Stack Developer & Designer - Building exceptional digital experiences",
+  title: "HR | Portfolio",
+  description: "Data Science & Machine Learning Enthusiast - Building data-driven solutions",
 };
 
 export default function RootLayout({

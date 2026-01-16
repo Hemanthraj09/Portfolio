@@ -16,6 +16,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Python", icon: "python" },
       { name: "Java", icon: "java" },
       { name: "SQL", icon: "sql" },
+      { name: "C", icon: "c" },
     ],
   },
   {
@@ -35,6 +36,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "Matplotlib", icon: "matplotlib" },
       { name: "Seaborn", icon: "seaborn" },
       { name: "Power BI", icon: "powerbi" },
+      { name: "Tableau", icon: "tableau" },
     ],
   },
   {
@@ -47,9 +49,11 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: "Tools & Databases",
+    title: "Tools & Environment",
     skills: [
       { name: "Git", icon: "git" },
+      { name: "GitHub", icon: "github" },
+      { name: "Jupyter Notebook", icon: "jupyter" },
       { name: "MongoDB", icon: "mongodb" },
     ],
   },

@@ -10,7 +10,7 @@ export default function Projects() {
   const featuredProjects = projects.slice(0, 3);
 
   return (
-    <section id="projects" className="relative py-32">
+    <section id="projects" className="relative overflow-hidden py-32">
       {/* Top divider line */}
       <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-divider to-transparent" />
 

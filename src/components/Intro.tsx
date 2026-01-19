@@ -27,7 +27,7 @@ const itemVariants = {
 
 export default function Intro() {
   return (
-    <section className="relative flex min-h-screen items-center py-20">
+    <section className="relative flex min-h-screen items-center overflow-hidden py-20">
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <motion.div
           className="max-w-3xl"

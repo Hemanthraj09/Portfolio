@@ -4,7 +4,7 @@ import { GraduationCap } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="relative py-32 bg-zinc-950/50">
+    <section id="about" className="relative overflow-hidden py-32 bg-zinc-950/50">
       {/* Top divider */}
       <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-divider to-transparent" />
 

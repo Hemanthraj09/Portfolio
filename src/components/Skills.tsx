@@ -66,7 +66,7 @@ const SkillIcon = ({ icon, name }: { icon: string; name: string }) => {
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-32">
+    <section id="skills" className="relative overflow-hidden py-32">
       {/* Top divider line */}
       <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-divider to-transparent" />
 

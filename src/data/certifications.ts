@@ -13,8 +13,8 @@ export const certifications: Certification[] = [
   // Featured (first 3 appear on homepage): Amagi, CeNS, BloodDonation
   {
     id: 1,
-    title: "Amagi Internship",
-    issuer: "Amagi",
+    title: "Amagi Media Technology",
+    issuer: "Amagi Learning Hub",
     date: "2025",
     image: "/certificates/Amagi.jpg",
     type: "image",

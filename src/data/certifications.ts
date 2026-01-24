@@ -115,8 +115,8 @@ export const certifications: Certification[] = [
   },
   {
     id: 12,
-    title: "Open Course Certificate 1",
-    issuer: "Platform",
+    title: "Campaigning 1",
+    issuer: "Phase Shift 2024",
     date: "2024",
     image: "/certificates/OCC1.png",
     type: "image",
@@ -124,8 +124,8 @@ export const certifications: Certification[] = [
   },
   {
     id: 13,
-    title: "Open Course Certificate 2",
-    issuer: "Platform",
+    title: "Campaigning 2",
+    issuer: "Phase Shift 2024",
     date: "2024",
     image: "/certificates/OCC2.png",
     type: "image",

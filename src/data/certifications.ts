@@ -50,7 +50,7 @@ export const certifications: Certification[] = [
   },
   {
     id: 15,
-    title: "IBM Data Science",
+    title: "IBM",
     issuer: "IBM",
     date: "2026",
     image: "/certificates/IBM.png",

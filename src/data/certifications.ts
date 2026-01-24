@@ -48,6 +48,15 @@ export const certifications: Certification[] = [
     type: "image",
     category: "course",
   },
+  {
+    id: 15,
+    title: "IBM Data Science",
+    issuer: "IBM",
+    date: "2026",
+    image: "/certificates/IBM.png",
+    type: "image",
+    category: "course",
+  },
   // Hackathon
   {
     id: 5,

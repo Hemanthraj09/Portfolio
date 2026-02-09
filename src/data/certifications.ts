@@ -67,6 +67,15 @@ export const certifications: Certification[] = [
     type: "image",
     category: "hackathon",
   },
+  {
+    id: 16,
+    title: "VISA Hackathon",
+    issuer: "IIT Madras",
+    date: "2026",
+    image: "/certificates/Visa.png",
+    type: "image",
+    category: "hackathon",
+  },
   // Leadership and Participation
   {
     id: 6,

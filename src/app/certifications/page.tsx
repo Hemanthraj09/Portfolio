@@ -47,7 +47,7 @@ export default function CertificationsPage() {
               Certifications
             </h1>
             <p className="max-w-2xl text-lg text-muted">
-              A collection of certifications, achievements, and recognitions from internships,
+              A collection of certifications, achievements, and recognitions from
               courses, hackathons, and leadership roles.
             </p>
           </motion.div>

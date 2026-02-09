@@ -39,7 +39,7 @@ export default function ProjectsPage() {
             All Projects
           </h1>
           <p className="mt-4 max-w-xl text-muted">
-            A complete collection of my work, including personal projects, client work, and experiments.
+            A curated laboratory of personal work and ongoing explorations
           </p>
         </motion.div>
 

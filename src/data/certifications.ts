@@ -10,7 +10,7 @@ export interface Certification {
 }
 
 export const certifications: Certification[] = [
-  // Featured (first 3 appear on homepage): Amagi, CeNS, BloodDonation
+  // Featured (first 3 appear on homepage): Amagi, IBM, VISA Hackathon
   {
     id: 1,
     title: "Amagi Media Technology",
@@ -21,6 +21,25 @@ export const certifications: Certification[] = [
     category: "course",
   },
   {
+    id: 15,
+    title: "IBM",
+    issuer: "IBM",
+    date: "2026",
+    image: "/certificates/IBM.png",
+    type: "image",
+    category: "course",
+  },
+  {
+    id: 16,
+    title: "VISA Hackathon",
+    issuer: "IIT Madras",
+    date: "2026",
+    image: "/certificates/Visa.png",
+    type: "image",
+    category: "hackathon",
+  },
+  // Courses
+  {
     id: 2,
     title: "CeNS Research",
     issuer: "Centre for Nano & Soft Matter Sciences",
@@ -30,30 +49,11 @@ export const certifications: Certification[] = [
     category: "course",
   },
   {
-    id: 3,
-    title: "Blood Donation Camp",
-    issuer: "Blood Bank",
-    date: "2024",
-    image: "/certificates/BloodDonation.jpg",
-    type: "image",
-    category: "leadership",
-  },
-  // Courses
-  {
     id: 4,
     title: "Machine Learning",
     issuer: "Certification Provider",
     date: "2025",
     image: "/certificates/ML_page-0001.jpg",
-    type: "image",
-    category: "course",
-  },
-  {
-    id: 15,
-    title: "IBM",
-    issuer: "IBM",
-    date: "2026",
-    image: "/certificates/IBM.png",
     type: "image",
     category: "course",
   },
@@ -67,16 +67,16 @@ export const certifications: Certification[] = [
     type: "image",
     category: "hackathon",
   },
-  {
-    id: 16,
-    title: "VISA Hackathon",
-    issuer: "IIT Madras",
-    date: "2026",
-    image: "/certificates/Visa.png",
-    type: "image",
-    category: "hackathon",
-  },
   // Leadership and Participation
+  {
+    id: 3,
+    title: "Blood Donation",
+    issuer: "Blood Bank",
+    date: "2024",
+    image: "/certificates/BloodDonation.jpg",
+    type: "image",
+    category: "leadership",
+  },
   {
     id: 6,
     title: "Decode AI",

@@ -69,15 +69,6 @@ export const certifications: Certification[] = [
   },
   // Leadership and Participation
   {
-    id: 3,
-    title: "Blood Donation",
-    issuer: "Blood Bank",
-    date: "2024",
-    image: "/certificates/BloodDonation.jpg",
-    type: "image",
-    category: "leadership",
-  },
-  {
     id: 6,
     title: "Decode AI",
     issuer: "Decode AI",

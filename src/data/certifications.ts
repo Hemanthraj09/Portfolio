@@ -10,7 +10,35 @@ export interface Certification {
 }
 
 export const certifications: Certification[] = [
-  // Featured (first 3 appear on homepage): Amagi, IBM, VISA Hackathon
+  // Featured (first 3 appear on homepage): Nutanix, Cisco, VISA Hackathon
+  {
+    id: 17,
+    title: "Nutanix Certified Associate 6",
+    issuer: "Nutanix",
+    date: "2026",
+    image: "/certificates/Nutanix.png",
+    type: "image",
+    category: "course",
+  },
+  {
+    id: 18,
+    title: "Cisco Forecasting League",
+    issuer: "CISCO",
+    date: "2026",
+    image: "/certificates/Cisco.png",
+    type: "image",
+    category: "hackathon",
+  },
+  {
+    id: 16,
+    title: "VISA Hackathon",
+    issuer: "IIT Madras",
+    date: "2026",
+    image: "/certificates/Visa.png",
+    type: "image",
+    category: "hackathon",
+  },
+  // Courses
   {
     id: 1,
     title: "Amagi Media Technology",
@@ -29,16 +57,6 @@ export const certifications: Certification[] = [
     type: "image",
     category: "course",
   },
-  {
-    id: 16,
-    title: "VISA Hackathon",
-    issuer: "IIT Madras",
-    date: "2026",
-    image: "/certificates/Visa.png",
-    type: "image",
-    category: "hackathon",
-  },
-  // Courses
   {
     id: 2,
     title: "CeNS Research",

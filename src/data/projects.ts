@@ -74,27 +74,30 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Document Q&A",
-    description: "RAG-powered document Q&A system using LangFlow for PDF processing. Upload documents or paste text to ask natural language questions with context-aware responses.",
+    title: "Visual Document Q&A",
+    description: "RAG-powered document Q&A system with a local LLM and interactive topic graph. Upload PDFs or paste text to ask natural language questions with context-aware streamed responses.",
     image: "/projects/document-qa.png",
-    tags: ["Python", "FastAPI", "LangFlow", "RAG", "Gemini"],
+    tags: ["Python", "FastAPI", "Ollama", "ChromaDB", "RAG", "D3.js"],
     github: "https://github.com/Hemanthraj09/Document-Q-A.git",
-    video: "/projects/videos/document-qa.mp4",
-    fullDescription: "A document question-answering system that leverages Retrieval-Augmented Generation (RAG) via LangFlow for processing PDF documents. Users can upload documents or paste text and ask natural language questions, receiving context-aware responses extracted from the document content.\n\nNote: This project is not hosted publicly as it uses an official API key. Hosting it could lead to unauthorized usage and API quota exhaustion.",
+    video: "/projects/videos/Document-QA.mp4",
+    fullDescription: "A document Q&A system built on a fully local RAG pipeline. PDFs are parsed with PyMuPDF using font-size heading detection, chunked, embedded with all-MiniLM-L6-v2, and stored in ChromaDB. Questions retrieve the top-5 chunks and stream responses from Ollama phi3 via SSE.\n\nA Concept Importance Engine scores each term using TF-IDF frequency, distribution across document sections, heading weight, and PageRank over a co-occurrence graph — driving a D3.js topic graph rendered instantly. A background LLM pass handles entity normalization and deduplication, merging refined concepts into the graph without blocking the user.\n\nRuns fully locally. Not hosted publicly due to hardware requirements (RTX 4050, 6GB VRAM).",
     features: [
-      "PDF document upload and text extraction",
-      "Direct text input support",
-      "Natural language question answering with RAG",
-      "Context-aware response generation",
-      "Session-based conversation memory",
-      "Modern, responsive chat interface"
+      "PDF upload with font-size heading detection (H1/H2/H3)",
+      "Streaming RAG chat via SSE with conversation history",
+      "Topic-aware retrieval re-ranking",
+      "D3.js force-directed topic graph with Core / Supporting / Minor tiers",
+      "4-signal composite importance score (TF-IDF, spread, heading, PageRank)",
+      "Async LLM entity normalization with fullscreen graph view",
+      "On-demand AI document summary"
     ],
     techDetails: [
-      "FastAPI for REST API backend",
-      "LangFlow for RAG pipeline orchestration",
-      "Google Gemini for LLM capabilities (via LangFlow)",
-      "PyMuPDF for PDF parsing",
-      "HTML/CSS/JavaScript for frontend UI"
+      "FastAPI + Uvicorn for REST API and SSE streaming",
+      "Ollama phi3 — local LLM, ~12 tok/s on RTX 4050 (6GB VRAM)",
+      "all-MiniLM-L6-v2 for embeddings, ChromaDB for vector search",
+      "scikit-learn TF-IDF + NetworkX PageRank on co-occurrence graph",
+      "PyMuPDF for PDF extraction and heading detection",
+      "D3.js for force-directed graph and bar chart",
+      "Vanilla HTML/CSS/JS frontend"
     ]
   },
   {

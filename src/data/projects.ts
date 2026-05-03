@@ -79,7 +79,7 @@ export const projects: Project[] = [
     image: "/projects/document-qa.png",
     tags: ["Python", "FastAPI", "Ollama", "ChromaDB", "RAG", "D3.js"],
     github: "https://github.com/Hemanthraj09/Document-Q-A.git",
-    video: "/projects/videos/Document-QA.mp4",
+    video: "/projects/videos/document-qa.mp4",
     fullDescription: "A document Q&A system built on a fully local RAG pipeline. PDFs are parsed with PyMuPDF using font-size heading detection, chunked, embedded with all-MiniLM-L6-v2, and stored in ChromaDB. Questions retrieve the top-5 chunks and stream responses from Ollama phi3 via SSE.\n\nA Concept Importance Engine scores each term using TF-IDF frequency, distribution across document sections, heading weight, and PageRank over a co-occurrence graph — driving a D3.js topic graph rendered instantly. A background LLM pass handles entity normalization and deduplication, merging refined concepts into the graph without blocking the user.\n\nRuns fully locally. Not hosted publicly due to hardware requirements (RTX 4050, 6GB VRAM).",
     features: [
       "PDF upload with font-size heading detection (H1/H2/H3)",

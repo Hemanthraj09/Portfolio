@@ -16,30 +16,59 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 1,
-    title: "AV Sync Detection",
-    description: "Deep learning system for detecting audio-visual synchronization issues using SyncNet architecture. Analyzes lip movements and speech patterns to identify dubbing mismatches.",
-    image: "/projects/av-sync-detection.png",
-    tags: ["Python", "Deep Learning", "SyncNet", "Computer Vision"],
-    github: "https://github.com/R-V-Abhishek/Syncnet_FCN.git",
-    video: "/projects/videos/av-sync-detection.mp4",
-    highlight: "This project was developed as a solution to a problem statement given by AMAGI, a leading media technology company.",
-    fullDescription: "It implements a deep learning-based audio-visual synchronization detection system using the SyncNet architecture. The system analyzes video content to detect lip-sync errors and dubbing mismatches by comparing audio signals with visual lip movements. It uses a Fully Convolutional Network (FCN) approach to process video frames and audio spectrograms, generating synchronization confidence scores that indicate whether the audio and video are properly aligned.",
+    id: 5,
+    title: "Tether",
+    description: "Social accountability app for friend groups. Create squads, log daily hours, compete on leaderboards, build streaks, and nudge slackers — all on Android.",
+    image: "/projects/tether.png",
+    tags: ["Kotlin", "Android", "Firebase", "Firestore", "FCM", "MVVM"],
+    github: "https://github.com/Hemanthraj09/Tether",
+    live: "https://github.com/Hemanthraj09/Tether/releases/latest",
+    video: "/projects/videos/Tether-demo.mp4",
+    fullDescription: "Tether is a social accountability app built for people who work better with a little competition.\n\nCreate a group with your friends, pick a goal, and show up every day. Log your hours, build your streak, and watch the leaderboard tell the truth about who's actually putting in the work.\n\nNudge friends who've gone quiet. Run focused sessions with the built-in timer. Watch your heatmap fill up, one logged day at a time.\n\nNo noise. Just you, your crew, and the grind.",
     features: [
-      "Detects lip-sync errors in video content with high accuracy",
-      "Uses SyncNet FCN architecture for temporal alignment analysis",
-      "Processes both audio waveforms and video frames simultaneously",
-      "Generates frame-by-frame synchronization confidence scores",
-      "Identifies dubbing mismatches in movies and TV shows",
-      "Supports batch processing of multiple video files"
+      "Real-time leaderboard that resets daily at midnight",
+      "GitHub-style heatmap showing full-year activity",
+      "Stopwatch and Pomodoro focus timer with foreground service",
+      "Per-group streaks and pace indicators",
+      "Nudge teammates via avatar tap — sends FCM push notification",
+      "Invite-code based group joining, max 6 members",
+      "Today's Activity notification feed"
     ],
     techDetails: [
-      "Python for core development",
-      "PyTorch/TensorFlow for deep learning implementation",
-      "SyncNet architecture with FCN modifications",
-      "OpenCV for video frame extraction",
-      "Librosa for audio processing and spectrogram generation",
-      "NumPy for numerical computations"
+      "Kotlin + XML + View Binding, single-Activity with Navigation Component",
+      "Firebase Auth (Email/Password + Google Sign-In)",
+      "Firestore with real-time snapshot listeners and composite indexes",
+      "FCM for push notifications (nudges)",
+      "MVVM architecture with Kotlin Coroutines and StateFlow",
+      "Foreground service for persistent timer with MIUI compatibility fixes"
+    ]
+  },
+  {
+    id: 3,
+    title: "Visual Document Q&A",
+    description: "RAG-powered document Q&A system with a local LLM and interactive topic graph. Upload PDFs or paste text to ask natural language questions with context-aware streamed responses.",
+    image: "/projects/document-qa.png",
+    tags: ["Python", "FastAPI", "Ollama", "ChromaDB", "RAG", "D3.js"],
+    github: "https://github.com/Hemanthraj09/Document-Q-A.git",
+    video: "/projects/videos/document-qa.mp4",
+    fullDescription: "A document Q&A system built on a fully local RAG pipeline. PDFs are parsed with PyMuPDF using font-size heading detection, chunked, embedded with all-MiniLM-L6-v2, and stored in ChromaDB. Questions retrieve the top-5 chunks and stream responses from Ollama phi3 via SSE.\n\nA Concept Importance Engine scores each term using TF-IDF frequency, distribution across document sections, heading weight, and PageRank over a co-occurrence graph — driving a D3.js topic graph rendered instantly. A background LLM pass handles entity normalization and deduplication, merging refined concepts into the graph without blocking the user.\n\nRuns fully locally. Not hosted publicly due to hardware requirements (RTX 4050, 6GB VRAM).",
+    features: [
+      "PDF upload with font-size heading detection (H1/H2/H3)",
+      "Streaming RAG chat via SSE with conversation history",
+      "Topic-aware retrieval re-ranking",
+      "D3.js force-directed topic graph with Core / Supporting / Minor tiers",
+      "4-signal composite importance score (TF-IDF, spread, heading, PageRank)",
+      "Async LLM entity normalization with fullscreen graph view",
+      "On-demand AI document summary"
+    ],
+    techDetails: [
+      "FastAPI + Uvicorn for REST API and SSE streaming",
+      "Ollama phi3 — local LLM, ~12 tok/s on RTX 4050 (6GB VRAM)",
+      "all-MiniLM-L6-v2 for embeddings, ChromaDB for vector search",
+      "scikit-learn TF-IDF + NetworkX PageRank on co-occurrence graph",
+      "PyMuPDF for PDF extraction and heading detection",
+      "D3.js for force-directed graph and bar chart",
+      "Vanilla HTML/CSS/JS frontend"
     ]
   },
   {
@@ -73,31 +102,30 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 3,
-    title: "Visual Document Q&A",
-    description: "RAG-powered document Q&A system with a local LLM and interactive topic graph. Upload PDFs or paste text to ask natural language questions with context-aware streamed responses.",
-    image: "/projects/document-qa.png",
-    tags: ["Python", "FastAPI", "Ollama", "ChromaDB", "RAG", "D3.js"],
-    github: "https://github.com/Hemanthraj09/Document-Q-A.git",
-    video: "/projects/videos/document-qa.mp4",
-    fullDescription: "A document Q&A system built on a fully local RAG pipeline. PDFs are parsed with PyMuPDF using font-size heading detection, chunked, embedded with all-MiniLM-L6-v2, and stored in ChromaDB. Questions retrieve the top-5 chunks and stream responses from Ollama phi3 via SSE.\n\nA Concept Importance Engine scores each term using TF-IDF frequency, distribution across document sections, heading weight, and PageRank over a co-occurrence graph — driving a D3.js topic graph rendered instantly. A background LLM pass handles entity normalization and deduplication, merging refined concepts into the graph without blocking the user.\n\nRuns fully locally. Not hosted publicly due to hardware requirements (RTX 4050, 6GB VRAM).",
+    id: 1,
+    title: "AV Sync Detection",
+    description: "Deep learning system for detecting audio-visual synchronization issues using SyncNet architecture. Analyzes lip movements and speech patterns to identify dubbing mismatches.",
+    image: "/projects/av-sync-detection.png",
+    tags: ["Python", "Deep Learning", "SyncNet", "Computer Vision"],
+    github: "https://github.com/R-V-Abhishek/Syncnet_FCN.git",
+    video: "/projects/videos/av-sync-detection.mp4",
+    highlight: "This project was developed as a solution to a problem statement given by AMAGI, a leading media technology company.",
+    fullDescription: "It implements a deep learning-based audio-visual synchronization detection system using the SyncNet architecture. The system analyzes video content to detect lip-sync errors and dubbing mismatches by comparing audio signals with visual lip movements. It uses a Fully Convolutional Network (FCN) approach to process video frames and audio spectrograms, generating synchronization confidence scores that indicate whether the audio and video are properly aligned.",
     features: [
-      "PDF upload with font-size heading detection (H1/H2/H3)",
-      "Streaming RAG chat via SSE with conversation history",
-      "Topic-aware retrieval re-ranking",
-      "D3.js force-directed topic graph with Core / Supporting / Minor tiers",
-      "4-signal composite importance score (TF-IDF, spread, heading, PageRank)",
-      "Async LLM entity normalization with fullscreen graph view",
-      "On-demand AI document summary"
+      "Detects lip-sync errors in video content with high accuracy",
+      "Uses SyncNet FCN architecture for temporal alignment analysis",
+      "Processes both audio waveforms and video frames simultaneously",
+      "Generates frame-by-frame synchronization confidence scores",
+      "Identifies dubbing mismatches in movies and TV shows",
+      "Supports batch processing of multiple video files"
     ],
     techDetails: [
-      "FastAPI + Uvicorn for REST API and SSE streaming",
-      "Ollama phi3 — local LLM, ~12 tok/s on RTX 4050 (6GB VRAM)",
-      "all-MiniLM-L6-v2 for embeddings, ChromaDB for vector search",
-      "scikit-learn TF-IDF + NetworkX PageRank on co-occurrence graph",
-      "PyMuPDF for PDF extraction and heading detection",
-      "D3.js for force-directed graph and bar chart",
-      "Vanilla HTML/CSS/JS frontend"
+      "Python for core development",
+      "PyTorch/TensorFlow for deep learning implementation",
+      "SyncNet architecture with FCN modifications",
+      "OpenCV for video frame extraction",
+      "Librosa for audio processing and spectrogram generation",
+      "NumPy for numerical computations"
     ]
   },
   {

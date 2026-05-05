@@ -39,12 +39,12 @@ export default function ProjectClient({ project }: ProjectClientProps) {
           className="mb-12"
         >
           {/* Project Image */}
-          <div className="relative mb-8 h-64 w-full overflow-hidden rounded-2xl border border-card-border md:h-80">
+          <div className="relative mb-8 h-64 w-full overflow-hidden rounded-2xl border border-card-border bg-black md:h-80">
             <Image
               src={project.image}
               alt={project.title}
               fill
-              className="object-cover"
+              className="object-contain"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           </div>
@@ -90,7 +90,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                 className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-black transition-all hover:bg-accent-hover"
               >
                 <ExternalLink size={18} />
-                Live Demo
+                APK
               </a>
             )}
           </div>
@@ -114,9 +114,11 @@ export default function ProjectClient({ project }: ProjectClientProps) {
             </div>
           )}
           
-          <p className="text-lg leading-relaxed text-muted">
-            {project.fullDescription || project.description}
-          </p>
+          <div className="space-y-4 text-lg leading-relaxed text-muted">
+            {(project.fullDescription || project.description).split('\n').filter(Boolean).map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
+          </div>
         </motion.section>
 
         {/* Features Section */}
@@ -171,7 +173,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
               <Play size={20} className="text-accent" />
               Video Demo
             </h2>
-            <div className="overflow-hidden rounded-2xl border border-card-border bg-card-bg">
+            <div className="mx-auto max-w-sm overflow-hidden rounded-2xl border border-card-border bg-card-bg">
               <video
                 src={project.video}
                 controls

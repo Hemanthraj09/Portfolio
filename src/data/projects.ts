@@ -7,6 +7,7 @@ export interface Project {
   tags: string[];
   github?: string;
   live?: string;
+  liveLabel?: string; // Button text for the live link (defaults to "Live Demo")
   video?: string;
   fullDescription?: string;
   highlight?: string;
@@ -23,6 +24,7 @@ export const projects: Project[] = [
     tags: ["Kotlin", "Android", "Firebase", "Firestore", "FCM", "MVVM"],
     github: "https://github.com/Hemanthraj09/Tether",
     live: "https://github.com/Hemanthraj09/Tether/releases/latest",
+    liveLabel: "Download APK",
     video: "/projects/videos/Tether-demo.mp4",
     fullDescription: "Tether is a social accountability app built for people who work better with a little competition.\n\nCreate a group with your friends, pick a goal, and show up every day. Log your hours, build your streak, and watch the leaderboard tell the truth about who's actually putting in the work.\n\nNudge friends who've gone quiet. Run focused sessions with the built-in timer. Watch your heatmap fill up, one logged day at a time.\n\nNo noise. Just you, your crew, and the grind.",
     features: [

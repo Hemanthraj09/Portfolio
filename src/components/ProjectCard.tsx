@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import type { Project } from "@/data/projects";
 
 interface ProjectCardProps {
@@ -93,13 +94,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
         {/* Footer */}
         <div className="flex items-center justify-end border-t border-divider pt-5">
-          <a
+          <Link
             href={`/projects/${project.id}`}
             className="flex items-center gap-1 text-sm font-medium text-accent transition-all hover:gap-2"
           >
             <span>Details</span>
             <ArrowUpRight size={14} />
-          </a>
+          </Link>
         </div>
       </div>
     </motion.div>

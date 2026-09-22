@@ -13,7 +13,7 @@ interface ProjectClientProps {
 
 export default function ProjectClient({ project }: ProjectClientProps) {
   return (
-    <main className="min-h-screen bg-background pt-20 pb-32">
+    <main className="min-h-screen bg-background pt-24 pb-32">
       <div className="mx-auto max-w-4xl px-6">
         {/* Back Button */}
         <motion.div
@@ -90,7 +90,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                 className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-black transition-all hover:bg-accent-hover"
               >
                 <ExternalLink size={18} />
-                APK
+                {project.liveLabel ?? "Live Demo"}
               </a>
             )}
           </div>

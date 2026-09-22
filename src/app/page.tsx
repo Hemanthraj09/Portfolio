@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import { Github } from "lucide-react";
 import ParticleBackground from "@/components/ParticleBackground";
-import Navbar from "@/components/Navbar";
 import Intro from "@/components/Intro";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
@@ -14,7 +13,6 @@ export default function Home() {
   return (
     <>
       <ParticleBackground />
-      <Navbar />
       <main className="relative z-10 min-h-screen">
         <Intro />
         <Skills />

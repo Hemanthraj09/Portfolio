@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hemanth Raj — Portfolio
 
-## Getting Started
+Personal portfolio site showcasing my projects, skills, and certifications.
 
-First, run the development server:
+Built with **Next.js 16** (App Router), **React 19**, **TypeScript**, **Tailwind CSS v4**, and **Framer Motion**.
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # static export to ./out
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site is configured for static export (`output: 'export'` in `next.config.ts`), so `npm run build` produces plain HTML/CSS/JS in `out/` that can be served from any static host.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Updating content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Most content lives in `src/data/`, so updates rarely need component changes.
 
-## Learn More
+| What | Where | Notes |
+|---|---|---|
+| Projects | `src/data/projects.ts` | The first 3 entries are featured on the home page. `id` is used in the URL (`/projects/<id>`). Set `liveLabel` to change the live-link button text (defaults to "Live Demo"). |
+| Certifications | `src/data/certifications.ts` | The first 3 entries are featured on the home page. `category` drives the filter tabs on `/certifications`. |
+| Skills | `src/data/skills.ts` | Each skill's `icon` key maps to an icon in `iconMap` in `src/components/Skills.tsx`; unmapped keys render as text-only chips. |
+| Resume | `public/resume.pdf` | Replace this file — every "Resume" button links to it. |
+| Images & videos | `public/projects/`, `public/certificates/` | Referenced by path from the data files. |
 
-To learn more about Next.js, take a look at the following resources:
+## Project structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/
+│   ├── layout.tsx              # Root layout: font, metadata, navbar
+│   ├── page.tsx                # Home: Intro, Skills, Projects, Certifications, About, Contact
+│   ├── globals.css             # Theme tokens (colours, font) and global styles
+│   ├── projects/page.tsx       # All projects
+│   ├── projects/[id]/          # Project detail pages (pre-rendered per project)
+│   └── certifications/page.tsx # All certifications with category filter
+├── components/                 # Page sections and cards
+└── data/                       # Projects, certifications, skills
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contact form
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The contact form in `src/components/Contact.tsx` submits to [Formspree](https://formspree.io).

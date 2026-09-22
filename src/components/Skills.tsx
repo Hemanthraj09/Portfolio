@@ -11,11 +11,18 @@ import {
   SiKeras, 
   SiScikitlearn,
   SiPandas,
-  SiStreamlit,
   SiFastapi,
+  SiKotlin,
+  SiR,
+  SiDocker,
+  SiFlask,
+  SiTableau,
+  SiNumpy,
+  SiAndroidstudio,
+  SiPostgresql,
 } from "react-icons/si";
 import { FaJava, FaDatabase, FaChartBar } from "react-icons/fa";
-import { TbApi } from "react-icons/tb";
+import { TbApi, TbTopologyStar3, TbDatabaseSearch } from "react-icons/tb";
 import { BiLineChart } from "react-icons/bi";
 import { IconType } from "react-icons";
 
@@ -24,20 +31,29 @@ const iconMap: Record<string, { Icon: IconType; color: string }> = {
   python: { Icon: SiPython, color: "#3776AB" },
   java: { Icon: FaJava, color: "#ED8B00" },
   sql: { Icon: FaDatabase, color: "#336791" },
+  kotlin: { Icon: SiKotlin, color: "#7F52FF" },
+  r: { Icon: SiR, color: "#276DC3" },
   html: { Icon: SiHtml5, color: "#E34F26" },
   css: { Icon: SiCss3, color: "#1572B6" },
   api: { Icon: TbApi, color: "#4CAF50" },
   fastapi: { Icon: SiFastapi, color: "#009688" },
-  streamlit: { Icon: SiStreamlit, color: "#FF4B4B" },
+  docker: { Icon: SiDocker, color: "#2496ED" },
+  flask: { Icon: SiFlask, color: "#E4E4E7" },
   pandas: { Icon: SiPandas, color: "#150458" },
   matplotlib: { Icon: BiLineChart, color: "#11557C" },
   seaborn: { Icon: BiLineChart, color: "#4C72B0" },
+  tableau: { Icon: SiTableau, color: "#E97627" },
+  numpy: { Icon: SiNumpy, color: "#4DABCF" },
   powerbi: { Icon: FaChartBar, color: "#F2C811" },
   tensorflow: { Icon: SiTensorflow, color: "#FF6F00" },
   keras: { Icon: SiKeras, color: "#D00000" },
   sklearn: { Icon: SiScikitlearn, color: "#F7931E" },
+  langflow: { Icon: TbTopologyStar3, color: "#A78BFA" },
+  rag: { Icon: TbDatabaseSearch, color: "#22D3EE" },
   git: { Icon: SiGit, color: "#F05032" },
   mongodb: { Icon: SiMongodb, color: "#47A248" },
+  android: { Icon: SiAndroidstudio, color: "#3DDC84" },
+  postgresql: { Icon: SiPostgresql, color: "#4169E1" },
 };
 
 // Skill Icon component with proper SVG logos

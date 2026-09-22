@@ -1,7 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "Skills", href: "#skills" },
@@ -13,6 +14,9 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  // Section links are in-page anchors on the home page; elsewhere they lead back to home
+  const isHome = usePathname() === "/";
+  const sectionHref = (hash: string) => (isHome ? hash : `/${hash}`);
 
   return (
     <motion.nav
@@ -24,7 +28,7 @@ export default function Navbar() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo/Name */}
-          <a href="#" className="text-lg font-semibold text-foreground hover:text-accent transition-colors">
+          <a href={isHome ? "#" : "/"} className="text-lg font-semibold text-foreground hover:text-accent transition-colors">
             HR
           </a>
 
@@ -33,7 +37,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <a
                 key={link.name}
-                href={link.href}
+                href={sectionHref(link.href)}
                 className="text-sm text-muted hover:text-foreground transition-colors animated-underline"
               >
                 {link.name}
@@ -72,27 +76,30 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation Menu */}
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="md:hidden border-t border-zinc-800 py-4"
-          >
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-sm text-muted hover:text-foreground transition-colors py-2"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              key="mobile-menu"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="md:hidden border-t border-zinc-800 py-4"
+            >
+              <div className="flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={sectionHref(link.href)}
+                    onClick={() => setIsOpen(false)}
+                    className="text-sm text-muted hover:text-foreground transition-colors py-2"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );

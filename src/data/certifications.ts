@@ -5,7 +5,6 @@ export interface Certification {
   issuer: string;
   date: string;
   image: string;
-  type: "image" | "pdf";
   category: "course" | "hackathon" | "leadership";
 }
 
@@ -17,7 +16,6 @@ export const certifications: Certification[] = [
     issuer: "Nutanix",
     date: "2026",
     image: "/certificates/Nutanix.png",
-    type: "image",
     category: "course",
   },
   {
@@ -26,7 +24,6 @@ export const certifications: Certification[] = [
     issuer: "CISCO",
     date: "2026",
     image: "/certificates/Cisco.png",
-    type: "image",
     category: "hackathon",
   },
   {
@@ -35,7 +32,6 @@ export const certifications: Certification[] = [
     issuer: "IIT Madras",
     date: "2026",
     image: "/certificates/Visa.png",
-    type: "image",
     category: "hackathon",
   },
   // Courses
@@ -45,7 +41,6 @@ export const certifications: Certification[] = [
     issuer: "Amagi Learning Hub",
     date: "2025",
     image: "/certificates/Amagi.jpg",
-    type: "image",
     category: "course",
   },
   {
@@ -54,7 +49,6 @@ export const certifications: Certification[] = [
     issuer: "IBM",
     date: "2026",
     image: "/certificates/IBM.png",
-    type: "image",
     category: "course",
   },
   {
@@ -63,16 +57,14 @@ export const certifications: Certification[] = [
     issuer: "Centre for Nano & Soft Matter Sciences",
     date: "2022",
     image: "/certificates/CeNS.jpg",
-    type: "image",
     category: "course",
   },
   {
     id: 4,
     title: "Machine Learning",
-    issuer: "Certification Provider",
+    issuer: "Simplilearn SkillUP",
     date: "2025",
     image: "/certificates/ML_page-0001.jpg",
-    type: "image",
     category: "course",
   },
   // Hackathon
@@ -82,7 +74,6 @@ export const certifications: Certification[] = [
     issuer: "L'Oréal",
     date: "2025",
     image: "/certificates/LOreal_page-0001.jpg",
-    type: "image",
     category: "hackathon",
   },
   // Leadership and Participation
@@ -92,16 +83,14 @@ export const certifications: Certification[] = [
     issuer: "Decode AI",
     date: "2025",
     image: "/certificates/DecodeAI.jpg",
-    type: "image",
     category: "leadership",
   },
   {
     id: 7,
     title: "Encode-Mania",
-    issuer: "Event Organizer",
+    issuer: "Phase Shift 2024",
     date: "2024",
     image: "/certificates/Encode-Mania_page-0001.jpg",
-    type: "image",
     category: "leadership",
   },
   {
@@ -110,34 +99,30 @@ export const certifications: Certification[] = [
     issuer: "BioGenesis",
     date: "2024",
     image: "/certificates/BioGenesis_page-0001.jpg",
-    type: "image",
     category: "leadership",
   },
   {
     id: 9,
     title: "Department Coordinator",
-    issuer: "College",
-    date: "2024",
+    issuer: "Phase Shift 2025",
+    date: "2025",
     image: "/certificates/HemanthRaj_Department_Coordinator_page-0001.jpg",
-    type: "image",
     category: "leadership",
   },
   {
     id: 10,
     title: "Sponsorship POC",
-    issuer: "Event Organizer",
+    issuer: "UTSAV 2025",
     date: "2025",
     image: "/certificates/SponsorshipPOC_page-0001.jpg",
-    type: "image",
     category: "leadership",
   },
   {
     id: 11,
     title: "Sponsorship POC (PS)",
-    issuer: "Event Organizer",
-    date: "2024",
+    issuer: "Phase Shift 2025",
+    date: "2025",
     image: "/certificates/HemanthRaj_Sponsorship_POC_(PS)_page-0001.jpg",
-    type: "image",
     category: "leadership",
   },
   {
@@ -146,7 +131,6 @@ export const certifications: Certification[] = [
     issuer: "Phase Shift 2024",
     date: "2024",
     image: "/certificates/OCC1.png",
-    type: "image",
     category: "leadership",
   },
   {
@@ -155,16 +139,14 @@ export const certifications: Certification[] = [
     issuer: "Phase Shift 2024",
     date: "2024",
     image: "/certificates/OCC2.png",
-    type: "image",
     category: "leadership",
   },
   {
     id: 14,
     title: "Volunteering Certificate",
-    issuer: "Organization",
+    issuer: "DSync, BMSCE",
     date: "2024",
     image: "/certificates/Volunteering.png",
-    type: "image",
     category: "leadership",
   },
 ];

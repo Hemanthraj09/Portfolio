@@ -1,6 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
-import { Award, ExternalLink, FileText } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Award, ExternalLink } from "lucide-react";
 import { Certification } from "@/data/certifications";
 import { useState } from "react";
 
@@ -28,8 +28,6 @@ export default function CertificationCard({ certification, index }: Certificatio
     leadership: "Leadership & Participation",
   };
 
-  const isPdf = certification.type === "pdf";
-
   return (
     <>
       <motion.div
@@ -46,18 +44,11 @@ export default function CertificationCard({ certification, index }: Certificatio
           className="relative aspect-[4/3] overflow-hidden bg-zinc-800 cursor-pointer"
           onClick={() => setShowModal(true)}
         >
-          {isPdf ? (
-            <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-900">
-              <FileText size={48} className="mb-2 text-accent/60" />
-              <span className="text-sm text-muted">PDF Certificate</span>
-            </div>
-          ) : (
-            <img
-              src={encodedImagePath}
-              alt={certification.title}
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          )}
+          <img
+            src={encodedImagePath}
+            alt={certification.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
           
           {/* Hover overlay */}
           <motion.div
@@ -96,42 +87,39 @@ export default function CertificationCard({ certification, index }: Certificatio
       </motion.div>
 
       {/* Modal for viewing certificate */}
-      {showModal && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
-          onClick={() => setShowModal(false)}
-        >
+      <AnimatePresence>
+        {showModal && (
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="relative max-h-[90vh] max-w-4xl overflow-auto rounded-xl bg-zinc-900 p-2"
-            onClick={(e) => e.stopPropagation()}
+            key="certificate-modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            onClick={() => setShowModal(false)}
           >
-            <button
-              onClick={() => setShowModal(false)}
-              className="absolute right-4 top-4 z-10 rounded-full bg-zinc-800 p-2 text-white transition-colors hover:bg-zinc-700"
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-h-[90vh] max-w-4xl overflow-auto rounded-xl bg-zinc-900 p-2"
+              onClick={(e) => e.stopPropagation()}
             >
-              ✕
-            </button>
-            {isPdf ? (
-              <iframe
-                src={encodedImagePath}
-                className="h-[80vh] w-[80vw] max-w-4xl rounded-lg"
-                title={certification.title}
-              />
-            ) : (
+              <button
+                onClick={() => setShowModal(false)}
+                className="absolute right-4 top-4 z-10 rounded-full bg-zinc-800 p-2 text-white transition-colors hover:bg-zinc-700"
+                aria-label="Close"
+              >
+                ✕
+              </button>
               <img
                 src={encodedImagePath}
                 alt={certification.title}
                 className="max-h-[85vh] w-auto rounded-lg"
               />
-            )}
+            </motion.div>
           </motion.div>
-        </motion.div>
-      )}
+        )}
+      </AnimatePresence>
     </>
   );
 }

@@ -7,7 +7,7 @@ import { ArrowLeft } from "lucide-react";
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-background pt-20 pb-32">
+    <main className="min-h-screen bg-background pt-24 pb-32">
       <div className="mx-auto max-w-6xl px-6">
         {/* Back Button */}
         <motion.div

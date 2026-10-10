@@ -3,7 +3,7 @@ export interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
+  image?: string; // Optional: cards show the title's first letter when missing
   tags: string[];
   github?: string;
   live?: string;
@@ -17,32 +17,62 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 6,
+    title: "RiskGuard",
+    description: "Return-risk decisioning platform for e-commerce. Scores each order's calibrated return probability in real time, explains it with SHAP, and recommends verification at a cost-optimal threshold.",
+    tags: ["Python", "FastAPI", "LightGBM", "SHAP", "Next.js", "SQLite"],
+    github: "https://github.com/Hemanthraj09/RiskGuard",
+    highlight: "Built for the Razorpay AI Buildathon 2026 (Track 02): a working detector, verifier, or responder for one class of loss, judged on honest precision and recall from a held-out test set.",
+    fullDescription: "Every returned e-commerce order costs money twice: once in fulfillment and again in reverse logistics. RiskGuard predicts, at the moment an order is placed, a calibrated probability that it will be returned, using the order's category, payment mode, value, delivery tier, and the customer's own purchase history. It then recommends accepting the order normally or flagging it for verification, using a cost-based threshold instead of an arbitrary 0.5 cutoff.\n\nThe data is split chronologically into train, validation, and test sets (65/15/20). The model trains on train, calibration and threshold selection happen on validation, and the threshold is frozen before the test set is ever touched. On the held-out test set the model reaches 0.812 ROC-AUC (95% CI 0.789–0.833) against a Bayes-optimal ceiling of 0.818, capturing about 98% of the achievable signal, and saves ₹43,521 per 1,000 orders compared with flagging nothing.\n\nRiskGuard only recommends. It never blocks, denies, or refunds an order; every decision is made and logged by a human analyst.",
+    features: [
+      "Real-time scoring of each order's calibrated return probability and risk band",
+      "Top-5 SHAP explanations and a rule-based suggested action for every order",
+      "Cost-optimal threshold that recomputes live as friction, return, and review costs change",
+      "Model Performance page with ROC and PR curves, calibration (Brier/ECE), lift, confusion matrix, segment breakdown, and bootstrap CIs",
+      "Simulation Console that streams fresh synthetic orders to the dashboard, with a risk-shift slider",
+      "Human-in-the-loop verifier: analysts confirm or flag orders, recorded as an audit trail",
+      "Benchmarked against a COD + fashion heuristic (about 17% costlier) and logistic regression"
+    ],
+    techDetails: [
+      "LightGBM (100 trees, depth 3, L1/L2 regularized) with isotonic calibration",
+      "SHAP TreeExplainer for per-order explanations",
+      "FastAPI backend with server-sent events; /score p95 latency of about 30 ms",
+      "SQLite store for order history and analyst decisions",
+      "Next.js (App Router), React, and Tailwind CSS dashboard",
+      "Shared feature module and a pytest suite guarding train/serve parity"
+    ]
+  },
+  {
     id: 5,
     title: "Tether",
-    description: "Social accountability app for friend groups. Create squads, log daily hours, compete on leaderboards, build streaks, and nudge slackers — all on Android.",
+    description: "Social accountability app for friend groups. Log daily work, keep streaks, compete on a live leaderboard, back logs with photo proof, and sync LeetCode solves automatically, all on Android.",
     image: "/projects/tether.png",
-    tags: ["Kotlin", "Android", "Firebase", "Firestore", "FCM", "MVVM"],
+    tags: ["Kotlin", "Android", "Firebase", "Firestore", "MVVM", "WorkManager"],
     github: "https://github.com/Hemanthraj09/Tether",
     live: "https://github.com/Hemanthraj09/Tether/releases/latest",
     liveLabel: "Download APK",
     video: "/projects/videos/Tether-demo.mp4",
-    fullDescription: "Tether is a social accountability app built for people who work better with a little competition.\n\nCreate a group with your friends, pick a goal, and show up every day. Log your hours, build your streak, and watch the leaderboard tell the truth about who's actually putting in the work.\n\nNudge friends who've gone quiet. Run focused sessions with the built-in timer. Watch your heatmap fill up, one logged day at a time.\n\nNo noise. Just you, your crew, and the grind.",
+    fullDescription: "Tether is a social accountability app built for people who work better with a little competition.\n\nCreate a group of up to six friends, pick a goal (study, coding, gym, reading, work, or habits), and show up every day. Log what you did, build your streak, and watch the leaderboard tell the truth about who's actually putting in the work.\n\nBack a log with a photo and let your friends approve it or call it out. Compare what you said you'd do this week with what you actually did. In coding groups, LeetCode solves sync on their own and count toward streaks and rankings.\n\nNudge friends who've gone quiet. Run focused sessions with the built-in timer. Watch your heatmap fill up, one logged day at a time.\n\nNo noise. Just you, your crew, and the grind.",
     features: [
-      "Real-time leaderboard that resets daily at midnight",
-      "GitHub-style heatmap showing full-year activity",
-      "Stopwatch and Pomodoro focus timer with foreground service",
-      "Per-group streaks and pace indicators",
-      "Nudge teammates via avatar tap — sends FCM push notification",
-      "Invite-code based group joining, max 6 members",
-      "Today's Activity notification feed"
+      "Real-time leaderboard (Today / This Week) that resets daily at midnight",
+      "Per-group streaks with pace indicators",
+      "Stopwatch and Pomodoro focus timer that stays accurate through screen-off, process death, and reboots",
+      "Photo proof on logs (optional or required per group), with approve/doubt reactions from friends",
+      "LeetCode connected account: verified solves sync automatically, credit streaks, and can rank coding groups",
+      "Said vs. Did: weekly targets per focus area compared against hours actually logged",
+      "Nudges and a live group activity feed",
+      "GitHub-style yearly heatmap, switchable to LeetCode solves",
+      "Invite-code based group joining, max 6 members"
     ],
     techDetails: [
       "Kotlin + XML + View Binding, single-Activity with Navigation Component",
-      "Firebase Auth (Email/Password + Google Sign-In)",
-      "Firestore with real-time snapshot listeners and composite indexes",
-      "FCM for push notifications (nudges)",
-      "MVVM architecture with Kotlin Coroutines and StateFlow",
-      "Foreground service for persistent timer with MIUI compatibility fixes"
+      "MVVM with repositories and a pure-Kotlin domain layer; Coroutines, Flow, and StateFlow",
+      "Firebase Auth (Email/Password + Google Sign-In) and Firestore with cache-first real-time listeners",
+      "Atomic batch writes for logging, enforced by security rules with 97 emulator tests",
+      "Foreground service running a timestamp-based timer state machine",
+      "WorkManager background sync with LeetCode's GraphQL API, with Remote Config hot-fixes and a kill switch",
+      "On-device photo compression, stored in Firestore to stay on Firebase's free plan",
+      "87 JVM unit tests and GitHub Actions CI that builds signed release APKs"
     ]
   },
   {

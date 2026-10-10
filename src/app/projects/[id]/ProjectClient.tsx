@@ -39,15 +39,17 @@ export default function ProjectClient({ project }: ProjectClientProps) {
           className="mb-12"
         >
           {/* Project Image */}
-          <div className="relative mb-8 h-64 w-full overflow-hidden rounded-2xl border border-card-border bg-black md:h-80">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-contain"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-          </div>
+          {project.image && (
+            <div className="relative mb-8 h-64 w-full overflow-hidden rounded-2xl border border-card-border bg-black md:h-80">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-contain"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            </div>
+          )}
 
           {/* Title & Tags */}
           <p className="mb-2 text-sm font-medium uppercase tracking-widest text-accent">

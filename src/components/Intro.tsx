@@ -56,7 +56,7 @@ export default function Intro() {
             variants={itemVariants}
             className="mb-8 text-xl font-medium text-muted md:text-2xl"
           >
-            Data Science & Machine Learning Enthusiast
+            Aspiring Software Developer
           </motion.h2>
 
           {/* Bio */}
@@ -64,8 +64,7 @@ export default function Intro() {
             variants={itemVariants}
             className="mb-10 max-w-xl text-base leading-relaxed text-muted md:text-lg"
           >
-            I&apos;m a data science student passionate about turning data into actionable insights.
-            I enjoy exploring datasets, building machine learning models, and learning how to deploy data-driven solutions that solve real-world problems.
+            I&apos;m a software developer passionate about turning ideas into working solutions. I enjoy solving complex problems, building scalable applications, exploring backend systems, and writing clean, efficient code to create software that makes a difference.
           </motion.p>
 
           {/* CTA Buttons */}

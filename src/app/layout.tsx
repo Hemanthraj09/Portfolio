@@ -11,7 +11,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Hemanth | Portfolio",
-  description: "Data Science & Machine Learning Enthusiast - Building data-driven solutions",
+  description: "Aspiring Software Developer - Building scalable backend systems, mobile apps, and intelligent software",
 };
 
 export default function RootLayout({
